@@ -1,0 +1,12 @@
+{
+  "name": "freeform-docs",
+  "version": "1.0.0",
+  "description": "Documentation for Freeform using elm-book",
+  "scripts": {
+    "build": "elm make src/Main.elm --output=static/main.js",
+    "dev": "elm-live src/Main.elm --open --pushstate -- --output=static/main.js"
+  },
+  "devDependencies": {
+    "elm-live": "^4.0.2"
+  }
+}

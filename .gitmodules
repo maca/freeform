@@ -1,0 +1,4 @@
+[submodule "form-toolkit"]
+	path = form-toolkit
+	url = https://github.com/maca/form-toolkit.git
+	branch = form-editor
