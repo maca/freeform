@@ -1,0 +1,65 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # docs/elm.json compiles against ../form-toolkit/src.
+          submodules: recursive
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # docs/elm.json requires elm-version 0.19.2, so this pins the 0.19.2
+      # build rather than the 0.19.1-5 used elsewhere.
+      - name: Install Elm
+        run: npm install -g elm@0.19.2-0
+
+      # Builds docs/static for a project Pages site at /<repo>/. Pass
+      # BASE_PATH="" here to build for a custom domain instead (set the domain
+      # in the repository's Pages settings; a CNAME file is not used by
+      # actions/deploy-pages).
+      - name: Build docs
+        run: ./docs/build.sh
+
+      - name: Setup Pages
+        if: github.ref == 'refs/heads/main'
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './docs/static'
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build-docs
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

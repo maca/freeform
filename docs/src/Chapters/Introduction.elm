@@ -34,7 +34,7 @@ apps will be improving, potentially benefiting a broader audience.
 ## Development plan
 
 The development is projected with a span of 2 months, consisting of a development
-and a validation and improvements phase: 
+and a validation, documentation and improvements phase: 
 
 
 1. Building a [form builder](/freeform/1--form-builder) application, including
