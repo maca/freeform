@@ -5,7 +5,7 @@ import ElmBook.Chapter as Chapter exposing (Chapter)
 
 chapter : Chapter state
 chapter =
-    Chapter.chapter "Introduction"
+    Chapter.chapter "Freeform"
         |> Chapter.render markdownContent
 
 
