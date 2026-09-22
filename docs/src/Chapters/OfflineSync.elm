@@ -14,4 +14,7 @@ markdownContent =
     """
 Explore and implement offline data synchronisation to a back-office.
 
+There is some exploration around this step but I might draw from some experience
+I have with CRDTs.
+
 """
