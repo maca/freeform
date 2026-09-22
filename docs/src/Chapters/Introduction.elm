@@ -26,9 +26,11 @@ combination: a drag-and-drop form builder web application, a web app for filling
 the forms, and a back-office interface for managing the survey projects. The
 back-end is optional, and as simple as possible to self-host.
 
-Currently under development, the progress will be documented and communicated through
-this page. As part of the development a few libraries, packages and dependency
-apps will be improving, potentially benefiting a broader audience.
+Currently under development, the progress will be documented and communicated
+through this website, the content will be replaced with documentation as this
+becomes available. As part of the development a few libraries, packages and
+dependency apps will be improving, potentially benefiting a broader audience.
+
 
 
 ## Development plan
