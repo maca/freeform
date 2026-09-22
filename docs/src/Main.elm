@@ -1,5 +1,6 @@
 module Main exposing (main)
 
+import BasePath
 import Chapters.BackOffice as BackOffice
 import Chapters.FormBuilder as FormBuilder
 import Chapters.FormFilling as FormFilling
@@ -8,6 +9,7 @@ import Chapters.OfflineExport as OfflineExport
 import Chapters.OfflineSync as OfflineSync
 import ElmBook exposing (Book, book)
 import ElmBook.StatefulOptions as StatefulOptions
+import ElmBook.ThemeOptions
 
 
 type alias Model =
@@ -24,6 +26,9 @@ init =
 main : Book Model
 main =
     book "Freeform"
+        |> ElmBook.withThemeOptions
+            [ ElmBook.ThemeOptions.routePrefix BasePath.basePath
+            ]
         |> ElmBook.withStatefulOptions
             [ StatefulOptions.initialState init
             ]

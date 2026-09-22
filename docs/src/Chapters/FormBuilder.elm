@@ -77,9 +77,22 @@ download an offline survey as a static html file, as well as saving the form
 schema to the back-office. Implementing conditional fields, multiple step surveys
 and file uploads.
 
-Build a form by dragging elements from the palette into the tree. Picking an
-element slides its properties in over the palette, and clicking anywhere else
-puts them away.
+## Progress
+
+We have a Form Builder that allows survey creators to build forms by dragging
+elements from the palette into the tree. Picking an element slides its
+properties in over the palette, and clicking anywhere else puts them away.
+
+The palette covers the essentials: text, checkboxes, whole numbers, dates,
+months, dropdowns, radio buttons, and groups — including repeatable groups that
+a respondent can fill in as many times as needed. The wider family of fields
+also includes multi-line text, email and web addresses, passwords, decimals,
+date-and-time stamps, and file uploads.
+
+Every field can carry a label, a placeholder and a hint, and can be marked as
+required, with optional minimum and maximum values for numbers. Labels, hints
+and error messages can be translated, so one survey can speak several
+languages.
 
 <component with-label="Builder"/>
 

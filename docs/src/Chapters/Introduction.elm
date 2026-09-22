@@ -12,7 +12,7 @@ chapter =
 markdownContent : String
 markdownContent =
     """
-Freeform is an offline-first and OSS alternative to Google Forms. It provides tools
+Freeform is (will be) an offline-first and OSS alternative to Google Forms. It provides tools
 to build complex questionnaires, surveys and forms, with a rich set of data types
 and field types; conditional logic and repeatable fields for collecting
 variable-length lists such as family members, employment history, references, or
@@ -26,18 +26,23 @@ combination: a drag-and-drop form builder web application, a web app for filling
 the forms, and a back-office interface for managing the survey projects. The
 back-end is optional, and as simple as possible to self-host.
 
-That's the shape of it for now. This page is where the advances land as they
-happen.
+Currently under development, the progress will be documented and communicated through
+this page. As part of the development a few libraries, packages and dependency
+apps will be improving, potentially benefiting a broader audience.
 
-## The plan
 
-**Stage 1** (2 months)
+## Development plan
+
+The development is projected with a span of 2 months, consisting of a development
+and a validation and improvements phase: 
+
 
 1. Building a [form builder](/freeform/1--form-builder) application, including
    functionality to generate and download an offline survey as a static html file,
    as well as saving the form schema to the back-office. Implementing conditional
    fields, multiple step surveys and file uploads.
-2. [Back-office](/freeform/2--back-office) development: Database modeling of
+2. [Back-office](/freeform/2--back-office-and-back-end) development: Database
+   modeling of
    Campaigns, Surveys, Users and Roles and other resources, PostgREST functions for
    admin login. Very simple ACL model for defining survey ownership and admin
    permissions for surveys, password and profile update.
@@ -52,7 +57,7 @@ happen.
 
 **Stage 2** (1 month)
 
-1. Feedback from researchers for further improvements.
+1. Feedback from social sciences researchers for further improvements.
 2. Request accessibility audit and implement suggestions
 3. Request security audit for the back-office API and implement suggestions.
 4. Document features, usage and deployment cookbooks.
